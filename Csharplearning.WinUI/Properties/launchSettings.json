@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Csharplearning.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Csharplearning.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -30,13 +30,14 @@
         {
             btnManageBooks = new Button();
             btnAddBook = new Button();
+            btnManageUsers = new Button();
             SuspendLayout();
             // 
             // btnManageBooks
             // 
             btnManageBooks.Location = new Point(45, 30);
             btnManageBooks.Name = "btnManageBooks";
-            btnManageBooks.Size = new Size(137, 107);
+            btnManageBooks.Size = new Size(168, 107);
             btnManageBooks.TabIndex = 0;
             btnManageBooks.Text = "Manage Books";
             btnManageBooks.UseVisualStyleBackColor = true;
@@ -52,11 +53,22 @@
             btnAddBook.UseVisualStyleBackColor = true;
             btnAddBook.Click += button2_Click;
             // 
+            // btnManageUsers
+            // 
+            btnManageUsers.Location = new Point(270, 31);
+            btnManageUsers.Name = "btnManageUsers";
+            btnManageUsers.Size = new Size(170, 106);
+            btnManageUsers.TabIndex = 2;
+            btnManageUsers.Text = "Manage Users";
+            btnManageUsers.UseVisualStyleBackColor = true;
+            btnManageUsers.Click += btnManageUsers_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnManageUsers);
             Controls.Add(btnAddBook);
             Controls.Add(btnManageBooks);
             Name = "MainForm";
@@ -68,5 +80,6 @@
 
         private Button btnManageBooks;
         private Button btnAddBook;
+        private Button btnManageUsers;
     }
 }

@@ -22,6 +22,9 @@ namespace CSharpLearning.Data.Database
 
             return Path.Combine(folder, "CSharplearning.db");
         }
-
+        public static string GetSqlConnectionString()
+        {
+            return "Server=sql1002.site4now.net;Database=db_ab2a0d_insentrydb;User Id=db_ab2a0d_insentrydb_admin;Password=1524Smarter.;TrustServerCertificate=True;";
+        }
     }
 }

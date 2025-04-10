@@ -25,9 +25,15 @@ namespace CSharplearning
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
             var addForm = new AddBookForm();
             addForm.ShowDialog();
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            var viewUsersForm = new ViewUsersForm();
+            viewUsersForm.ShowDialog();
         }
     }
 }

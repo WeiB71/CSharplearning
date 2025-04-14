@@ -28,7 +28,7 @@ namespace Csharplearning.WinUI
     {
         private readonly BookInlineCrudService _crudService;
         private readonly string _dbPath = DatabaseConfig.GetDbPath();
-
+        private Book? _selectedBook = null;
         public MainWindow()
         {
             this.InitializeComponent();
@@ -56,6 +56,18 @@ namespace Csharplearning.WinUI
             await _crudService.AddBookAsync(book);
             LoadBooks();
             TitleBox.Text = AuthorBox.Text = string.Empty;
+        }
+        private void BooksListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _selectedBook = (Book)BooksListView.SelectedItem;
+
+            if (_selectedBook != null)
+            {
+                TitleBox.Text = _selectedBook.Title;
+                AuthorBox.Text = _selectedBook.Author;
+               // PublishedDatePicker.Date = new DateTimeOffset(_selectedBook.DatePublished);
+                AddBookBtn.Content = "Update Book";
+            }
         }
 
     }

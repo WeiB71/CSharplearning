@@ -3,13 +3,55 @@
     x:Class="Csharplearning.WinUI.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:CSharpLearning.Data.Models"
     xmlns:local="using:Csharplearning.WinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Title="Csharplearning.WinUI">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="12">
+
+            <!-- Section Title -->
+            <TextBlock Text="📘 Add New Book" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,10"/>
+
+            <!-- Book Title -->
+            <TextBlock Text="Title" Margin="0,0,0,2"/>
+            <TextBox x:Name="TitleBox" PlaceholderText="Enter book title"/>
+
+            <!-- Author -->
+            <TextBlock Text="Author" Margin="0,10,0,2"/>
+            <TextBox x:Name="AuthorBox" PlaceholderText="Enter author's name"/>
+
+            <!-- Date Published -->
+            <TextBlock Text="Date Published" Margin="0,10,0,2"/>
+            <DatePicker x:Name="PublishedDatePicker"/>
+
+            <!-- Button -->
+            <Button Content="Add Book" Click="AddBook_Click" Margin="0,20,0,10" HorizontalAlignment="Left"/>
+
+            <!-- Divider -->
+         
+            <!-- List Header -->
+            <TextBlock Text="📚 Book List" FontSize="18" FontWeight="SemiBold" Margin="0,10,0,5"/>
+
+            <!-- Book List -->
+            <ListView x:Name="BooksListView" MinHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Book">
+                        <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="6" Margin="0,5" Padding="10">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Title}" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="{x:Bind Author}" FontSize="14"/>
+                                <TextBlock Text="{x:Bind DatePublished, Mode=OneWay}" FontSize="12" Foreground="DarkGray"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+    </ScrollViewer>
+
 </Window>

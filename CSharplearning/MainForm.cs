@@ -32,7 +32,13 @@ namespace CSharplearning
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void btnVIewUserForm_Click(object sender, EventArgs e)
+        {
+            var viewForm = new ViewUserForm();
+            viewForm.ShowDialog(); // or Show()
         }
     }
 }
